@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Webpack App</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script defer="defer" src="index.js"></script>
+  </head>
+  <body>
+
+    <nav id="header" class="navbar navbar-dark bg-dark">
+      <button class="btn btn-success" id="copy-btn">Copy</button>
+      <a id="log-caller" class="text-white" >Version beta 0.5</a>
+    </nav>
+    
+    <nav id="trash"><h1>УДАЛИТЬ ЕЛЕМЕНТ</h1></nav>
+
+    <main class="container-fluid">
+      <div id="main-rows" class="row justify-content-md-center">
+        <div class="col h-100 overflow-auto border main-row context-menu-caller" context-menu-data="">
+          
+        </div>
+      </div>
+    </main>
+    
+    <ul id="context-menu" ></ul>
+    
+    <button id="hide-copyer" ></button>
+    
+
+    <div class="modal" id="logModalForm" tabindex="-1"  >
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" >Список обновлений</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="modal-exit-btn" >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h4>0.6 Beta</h4>
+            <p>Первый выпуск скриптера.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </body>
+</html>
