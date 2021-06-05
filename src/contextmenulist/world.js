@@ -133,7 +133,7 @@ let result = [
     element: {
       type: ElementType.SIMPLE,
       returns: ReturnsType.STRING,
-      header: "название биома в кординатах x {} y {}",
+      header: "название биома в кординатах x {number} y {number}",
       code: "getBiomeName({},{})"
     }
   },
