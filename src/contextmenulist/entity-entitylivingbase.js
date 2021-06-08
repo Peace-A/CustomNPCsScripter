@@ -1,12 +1,12 @@
 const { assertChildrens } = require("../AssertContextMenuList") 
 
 let result = {
-  entity: {
+  target: {
     title: "объект",
     children: []
   }
 }
 
-assertChildrens(result, require("./entitylivingbase"), "event.entity.")
+assertChildrens(result.target, require("./entitylivingbase"), "event.entity.")
 
 module.exports = result 

@@ -7,6 +7,6 @@ let result = {
   }
 }
 
-assertChildrens(result, require("./entitylivingbase"), "event.target.")
+assertChildrens(result.target, require("./entitylivingbase"), "event.target.")
 
 module.exports = result
