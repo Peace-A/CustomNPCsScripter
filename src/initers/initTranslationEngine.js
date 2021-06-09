@@ -197,7 +197,7 @@ function setNormalMode( target$ ) { target$.removeClass("cannot-append") }
 function getGlobalContextmenudata( target$ ) {
   let result = []
   if (target$.attr === undefined) return result
-  if (target$.attr("context-menu-data")) {
+  if (target$.attr("context-menu-data") !== undefined) {
     result = target$.attr("context-menu-data").split(' ').concat(result)
     result = getGlobalContextmenudata(target$.parent().parent()).concat(result)
   }

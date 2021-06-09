@@ -42,7 +42,7 @@ let result = {
         title: "Сыграть звук",
         element: {
           type: ElementType.SIMPLE,
-          header: "Сиграть звук с ID {string}",
+          header: "Сыграть звук с ID {string}",
           code: "event.player.playSound({})"
         }
       },

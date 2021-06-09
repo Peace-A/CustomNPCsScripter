@@ -1,6 +1,6 @@
 {
   "name": "custom-npcs-scripter",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "description": "Custom npcs scripter",
   "main": "./src/index.js",
   "scripts": {
