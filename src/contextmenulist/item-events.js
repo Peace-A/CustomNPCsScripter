@@ -10,7 +10,7 @@ module.exports = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "В начале",
-          code: "function init(event) {[itemscripted api]}"
+          code: "function init(event) {:[itemscripted:]}"
         }
       },
       {
@@ -19,7 +19,7 @@ module.exports = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Ежесекундно",
-          code: "function tick(event) {[itemscripted api]}"
+          code: "function tick(event) {:[itemscripted:]}"
         }
       },
       {
@@ -31,7 +31,7 @@ module.exports = {
               type: ElementType.UL,
               cannot_be_inherits: true,
               header: "При правом клике в воздух",
-              code: "function interact(event) {if (event.type == 0) { [player api itemscripted] } }"
+              code: "function interact(event) {if (event.type == 0) { :[player itemscripted:] } }"
             }
           },
           {
@@ -40,7 +40,7 @@ module.exports = {
               type: ElementType.UL,
               cannot_be_inherits: true,
               header: "При правом клике в существо",
-              code: "function interact(event) {if (event.type == 1) { [player api target-entity itemscripted] } }"
+              code: "function interact(event) {if (event.type == 1) { :[player target-entity itemscripted:] } }"
             }
           },
           {
@@ -49,7 +49,7 @@ module.exports = {
               type: ElementType.UL,
               cannot_be_inherits: true,
               header: "При правом клике в блок",
-              code: "function interact(event) {if (event.type == 2) { [player api target-block itemscripted] } }"
+              code: "function interact(event) {if (event.type == 2) { :[player target-block itemscripted:] } }"
             }
           }
         ]
@@ -63,7 +63,7 @@ module.exports = {
               type: ElementType.UL,
               cannot_be_inherits: true,
               header: "При левом клике в воздух",
-              code: "function attack(event) {if (event.type == 0) { [player api itemscripted] } }"
+              code: "function attack(event) {if (event.type == 0) { :[player itemscripted:] } }"
             }
           },
           {
@@ -72,7 +72,7 @@ module.exports = {
               type: ElementType.UL,
               cannot_be_inherits: true,
               header: "При левом клике в существо",
-              code: "function attack(event) {if (event.type == 1) { [player api target-entity itemscripted] } }"
+              code: "function attack(event) {if (event.type == 1) { :[player target-entity itemscripted:] } }"
             }
           },
           {
@@ -81,7 +81,7 @@ module.exports = {
               type: ElementType.UL,
               cannot_be_inherits: true,
               header: "При левом клике в блок",
-              code: "function attack(event) {if (event.type == 2) { [player api target-block itemscripted] } }"
+              code: "function attack(event) {if (event.type == 2) { :[player target-block itemscripted:] } }"
             }
           }
         ]
@@ -92,7 +92,7 @@ module.exports = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда предмет кто-то бросает",
-          code: "function toss(event) {[player api itemscripted]}"
+          code: "function toss(event) {:[player itemscripted:]}"
         }
       },
       {
@@ -101,7 +101,7 @@ module.exports = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда предмет кто-то подбирает",
-          code: "function pickedUp(event) {[player api itemscripted]}"
+          code: "function pickedUp(event) {:[player itemscripted:]}"
         }
       }
     ]

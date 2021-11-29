@@ -9,7 +9,7 @@ module.exports = {
         element: {
           type: ElementType.UL,
           header: "Если {bool}",
-          code: "if ({}) {[]}"
+          code: "if ({}) {:[:]}"
         }
       },
       {
@@ -17,7 +17,7 @@ module.exports = {
         element: {
           type: ElementType.UL,
           header: "С шансом в {number} процентов",
-          code: "if(Math.random()<=({}/100)) {[]}"
+          code: "if(Math.random()<=({}/100)) {:[:]}"
         }
       },
       {

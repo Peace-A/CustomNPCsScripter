@@ -28,11 +28,14 @@ module.exports = () => {
         })
 
       },
-      end( { target, clientY } ) {
+      end( { target, relatedTarget, clientY } ) {
 
         // remove element in the top of browser
         if ( clientY < 0 )
           $(target).remove()
+        // come back element if is was added in not use area
+        else if ( relatedTarget === null )
+          turnIntoRelative($(target)).appendTo(parent$)
 
       }
     }
@@ -69,9 +72,10 @@ module.exports = () => {
         return
         
       if (isIncludesCategory) {
-        reverseFantom( getFantom( $(target) ) )
-        $(relatedTarget).remove()
+        getFantom( $(target) ).remove()
+        turnIntoRelative($(relatedTarget)).appendTo( $(target) )
       } else {
+        // come back element
         turnIntoRelative($(relatedTarget)).appendTo(parent$)
         setNormalMode( $(target).parent() )
       }
@@ -106,14 +110,15 @@ module.exports = () => {
       if (!ulsFantom) {
         turnIntoRelative($(relatedTarget)).appendTo(parent$)
       } else {
-        reverseFantom(ulsFantom)
-        $(relatedTarget).remove()
+        turnIntoRelative($(relatedTarget)).appendTo(ulsFantom.parent())
+        setOpacityTo1($(relatedTarget))
+        ulsFantom.remove()
       }
       ulsFantom = null
     }
   }
-  interact(".doElement>ul").dropzone(listDropzoneProper)
-  interact(".main-row").dropzone(listDropzoneProper)
+  interact(".doElement>ul.context-menu-caller-small").dropzone(listDropzoneProper)
+  interact(".do-workspace").dropzone(listDropzoneProper)
   
 
   // append system of elements to small-boxes in elements

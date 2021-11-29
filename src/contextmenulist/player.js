@@ -23,6 +23,15 @@ let result = {
         }
       },
       {
+        title: "позиция",
+        element: {
+          type: ElementType.SIMPLE,
+          returns: ReturnsType.POS,
+          header: "позиция игрока",
+          code: "event.player.getPos()"
+        }
+      },
+      {
         title: "Закрыть gui",
         element: {
           type: ElementType.SIMPLE,
@@ -178,7 +187,7 @@ let result = {
             element: {
               type: ElementType.SIMPLE,
               header: "Установить уровень игрока {number}",
-              code: "event.player.setExpLevel()"
+              code: "event.player.setExpLevel({})"
             }
           },
         ]
@@ -258,6 +267,7 @@ let result = {
       },
       {
         title: "квест",
+        hint: `<img src="hint/idHint.png" > ID квеста можно узнать в окне с квестом`,
         children: [
           {
             title: "выполнил",
@@ -371,6 +381,7 @@ let result = {
       },
       {
         title: "диалог",
+        hint: `<img src="hint/idHint.png" > ID диалог можно узнать в окне с квестом`,
         children: [
           {
             title: "прочитал",
@@ -414,6 +425,14 @@ let result = {
             }
           }
         ]
+      },
+      {
+        title: "Показать интерфейс",
+        element: {
+          type: ElementType.SIMPLE,
+          header: "Показать игроку интерфейс с ID {number}",
+          code: "event.player.showCustomGui(scriptGuiList[{}])"        
+        }
       }
     ]
   }
@@ -421,6 +440,7 @@ let result = {
 
 assertChildrens(result.player.children[0], require("./world"), "event.player.world.")
 assertChildrens(result.player.children[1], require("./data"), "event.player.")
+assertChildrens(result.player, require("./timer"), "event.player.getTimers()")
 assertChildrens(result.player, require("./entitylivingbase"), "event.player.")
 
 module.exports = result

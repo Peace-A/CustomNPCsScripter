@@ -19,10 +19,10 @@ module.exports = {
 		]
 	},
   devServer: {
-    contentBase: path.join(__dirname, "dist")
+    contentBase: __dirname
   },
 	output: {
-		path: path.resolve(__dirname, "dist"),
+		path: __dirname,
 		filename: "index.js"
 	},
 	plugins: [

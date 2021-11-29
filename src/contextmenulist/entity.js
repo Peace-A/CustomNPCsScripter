@@ -128,6 +128,15 @@ let result = [
     }
   },
   {
+    title: "позиция",
+    element: {
+      type: ElementType.SIMPLE,
+      returns: ReturnsType.POS,
+      header: "позиция",
+      code: "getPos()"
+    }
+  },
+  {
     title: "Установить позицию",
     element: {
       type: ElementType.SIMPLE,

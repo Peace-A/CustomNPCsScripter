@@ -1,3 +1,10 @@
 node_modules
+dist/*.*
+dist/*-unpacked
+dist/*-i386
+dist/*-ico
+index.js
 package-lock.json
 yarn.lock
+pnpm-lock.yaml
+.eslintrc.yml

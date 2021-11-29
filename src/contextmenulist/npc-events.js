@@ -9,8 +9,9 @@ module.exports = {
         element: {
           type: ElementType.UL,
           cannot_be_inherits: true,
+          only_one: true,
           header: "В начале",
-          code: "function init(event) {[npc api]}"
+          code: "function init(event) {:[npc:]}"
         }
       },
       {
@@ -18,8 +19,9 @@ module.exports = {
         element: {
           type: ElementType.UL,
           cannot_be_inherits: true,
+          only_one: true,
           header: "Ежесекундно",
-          code: "function tick(event) {[npc api]}"
+          code: "function tick(event) {:[npc:]}"
         }
       },
       {
@@ -27,8 +29,9 @@ module.exports = {
         element: {
           type: ElementType.UL,
           cannot_be_inherits: true,
+          only_one: true,
           header: "Когда взаимодействует игрок",
-          code: "function interact(event) {[npc api player]}"
+          code: "function interact(event) {:[npc player:]}"
         }
       },
       {
@@ -36,8 +39,9 @@ module.exports = {
         element: {
           type: ElementType.UL,
           cannot_be_inherits: true,
+          only_one: true,
           header: "Когда получает урон",
-          code: "function damaged(event) {[npc api source-entity]}"
+          code: "function damaged(event) {:[npc source-entity:]}"
         }
       },
       {
@@ -45,8 +49,9 @@ module.exports = {
         element: {
           type: ElementType.UL,
           cannot_be_inherits: true,
+          only_one: true,
           header: "Когда умер",
-          code: "function died(event) {[npc api source-entity]}"
+          code: "function died(event) {:[npc source-entity:]}"
         }
       },
       {
@@ -54,8 +59,9 @@ module.exports = {
         element: {
           type: ElementType.UL,
           cannot_be_inherits: true,
+          only_one: true,
           header: "Когда нанёс урон",
-          code: "function meleeAttack(event) {[npc api target-entitylivingbase]}"
+          code: "function meleeAttack(event) {:[npc target-entitylivingbase:]}"
         }
       },
       {
@@ -63,8 +69,9 @@ module.exports = {
         element: {
           type: ElementType.UL,
           cannot_be_inherits: true,
+          only_one: true,
           header: "Когда выстрелел",
-          code: "function rangedLaunched(event) {[npc api target-entitylivingbase]}"
+          code: "function rangedLaunched(event) {:[npc target-entitylivingbase:]}"
         }
       },
       {
@@ -72,8 +79,9 @@ module.exports = {
         element: {
           type: ElementType.UL,
           cannot_be_inherits: true,
+          only_one: true,
           header: "Когда увидил врага",
-          code: "function target(event) {[npc api entity-entitylivingbase]}"
+          code: "function target(event) {:[npc entity-entitylivingbase:]}"
         }
       },
       {
@@ -81,8 +89,9 @@ module.exports = {
         element: {
           type: ElementType.UL,
           cannot_be_inherits: true,
+          only_one: true,
           header: "Когда потерял из виду врага",
-          code: "function targetLost(event) {[npc api target-entitylivingbase]}"
+          code: "function targetLost(event) {:[npc target-entitylivingbase:]}"
         }
       },
       {
@@ -90,8 +99,9 @@ module.exports = {
         element: {
           type: ElementType.UL,
           cannot_be_inherits: true,
+          only_one: true,
           header: "Когда убил кого-то",
-          code: "function kill(event) {[npc api entity-entitylivingbase]}"
+          code: "function kill(event) {:[npc entity-entitylivingbase:]}"
         }
       },
       {
@@ -99,8 +109,9 @@ module.exports = {
         element: {
           type: ElementType.UL,
           cannot_be_inherits: true,
+          only_one: true,
           header: "При прикосновении",
-          code: "function collide(event) {[npc api entity-entity]}"
+          code: "function collide(event) {:[npc entity-entity:]}"
         }
       }
     ]

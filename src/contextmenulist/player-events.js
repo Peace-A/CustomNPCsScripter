@@ -11,7 +11,7 @@ let result = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "В начале",
-          code: "function init(event) {[player api]}"
+          code: "function init(event) {:[player:]}"
         }
       },
       {
@@ -20,7 +20,7 @@ let result = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Ежесекундно",
-          code: "function tick(event) {[player api]}"
+          code: "function tick(event) {:[player:]}"
         }
       },
       {
@@ -32,7 +32,7 @@ let result = {
               type: ElementType.UL,
               cannot_be_inherits: true,
               header: "При правом клике в воздух",
-              code: "function interact(event) {if (event.type == 0) { [player api] } }"
+              code: "function interact(event) {if (event.type == 0) { :[player:] } }"
             }
           },
           {
@@ -41,7 +41,7 @@ let result = {
               type: ElementType.UL,
               cannot_be_inherits: true,
               header: "При правом клике в существо",
-              code: "function interact(event) {if (event.type == 1) { [player api target-entity] } }"
+              code: "function interact(event) {if (event.type == 1) { :[player target-entity:] } }"
             }
           },
           {
@@ -50,7 +50,7 @@ let result = {
               type: ElementType.UL,
               cannot_be_inherits: true,
               header: "При правом клике в блок",
-              code: "function interact(event) {if (event.type == 2) { [player api target-block] } }"
+              code: "function interact(event) {if (event.type == 2) { :[player target-block:] } }"
             }
           }
         ]
@@ -61,7 +61,7 @@ let result = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда ломает блок",
-          code: "function broken(event) {[player api exp block]}"
+          code: "function broken(event) {:[player exp block:]}"
         }
       },
       {
@@ -70,7 +70,7 @@ let result = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда бросает предмет",
-          code: "function toss(event) {[player api item-itemstack]}"
+          code: "function toss(event) {:[player item-itemstack:]}"
         }
       },
       {
@@ -79,7 +79,7 @@ let result = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда подбирает предмет",
-          code: "function pickedUp(event) {[player api item-itemstack]}"
+          code: "function pickedUp(event) {:[player item-itemstack:]}"
         }
       },
       {
@@ -88,7 +88,7 @@ let result = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда умер",
-          code: "function died(event) {[player api source-entity]}"
+          code: "function died(event) {:[player source-entity:]}"
         }
       },
       {
@@ -97,7 +97,7 @@ let result = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда убил кого-то",
-          code: "function kill(event) {[player api entity-entitylivingbase]}"
+          code: "function kill(event) {:[player entity-entitylivingbase:]}"
         }
       },
       {
@@ -106,7 +106,7 @@ let result = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда получил урон",
-          code: "function damaged(event) {[player api source-entity damage-float]}"
+          code: "function damaged(event) {:[player source-entity damage-float:]}"
         }
       },
       {
@@ -115,7 +115,7 @@ let result = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда ударил кого-то",
-          code: "function damagedEntity(event) {[player api target-entity damage-float]}"
+          code: "function damagedEntity(event) {:[player target-entity damage-float:]}"
         }
       },
       {
@@ -124,7 +124,7 @@ let result = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда вистрелил",
-          code: "function rangedLaunched(event) {[player api]}"
+          code: "function rangedLaunched(event) {:[player:]}"
         }
       },
       {
@@ -133,7 +133,7 @@ let result = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда зашёл на сервер",
-          code: "function login(event) {[player api]}"
+          code: "function login(event) {:[player:]}"
         }
       },
       {
@@ -142,7 +142,7 @@ let result = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда вышёл с сервера",
-          code: "function logout(event) {[player api]}"
+          code: "function logout(event) {:[player:]}"
         }
       },
       {
@@ -151,7 +151,7 @@ let result = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда пишет что-то в чат",
-          code: "function chat(event) {[player api message-string]}"
+          code: "function chat(event) {:[player message-string:]}"
         }
       }
     ]

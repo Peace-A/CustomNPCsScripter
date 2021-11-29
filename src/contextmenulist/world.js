@@ -1,5 +1,56 @@
 const { ElementType, ReturnsType } = require("../ContextMenuConstants")
 const { assertChildrens } = require("../AssertContextMenuList")
+const particleList = [
+  "angryVillager",
+  "barrier",
+  "blockcrack",
+  "blockdust",
+  "bubble",
+  "cloud",
+  "crit",
+  "damageIndicator",
+  "depthsuspend",
+  "dragonbreath",
+  "dripLava",
+  "dripWater",
+  "droplet",
+  "enchantmenttable",
+  "endRod",
+  "explode",
+  "fallingdust",
+  "fireworkdSpark",
+  "flame",
+  "footstep",
+  "happyVillager",
+  "heart",
+  "hugeexplosion",
+  "iconcrack",
+  "instantSpell",
+  "largeexplode",
+  "largesmoke",
+  "lava",
+  "magicCrit",
+  "mobSpell",
+  "mobSpellAmbient",
+  "modappearance",
+  "note",
+  "portal",
+  "reddust",
+  "slime",
+  "smoke",
+  "snowballpoof",
+  "snowshovel",
+  "spell",
+  "spit",
+  "splash",
+  "suspended",
+  "sweepAttack",
+  "take",
+  "totem",
+  "townaura",
+  "wake",
+  "witchMagic"
+]
 
 let result = [
   {
@@ -78,8 +129,8 @@ let result = [
     title: "Частицы",
     element: {
       type: ElementType.SIMPLE,
-      header: "Создать частицы с ID {string} в кординатах x {number} y {number} z {number} с разбросом x {number} y {number} z {number} в количестве {number}",
-      code: "spawnParticle({},{},{},{},{},{},{},1,{})"
+      header: `Создать частицы с ID {:list:( title:ID; list:${particleList.join(",")}; )} в кординатах x {number} y {number} z {number} с разбросом x {number} y {number} z {number} в количестве {number}`,
+      code: "spawnParticle(\"{}\",{},{},{},{},{},{},1,{})"
     }
   },
   {
@@ -140,9 +191,29 @@ let result = [
   {
     title: "Чат",
     element: {
-        type: ElementType.SIMPLE,
-        header: "написать в чат {string}",
-        code: "broadcast({})"
+      type: ElementType.SIMPLE,
+      header: "написать в чат {string}",
+      code: "broadcast({})"
+    }
+  },
+  {
+    title: "Для ближайшего существа",
+    element: {
+      type: ElementType.UL,
+      cannot_inherit:true,
+      header: "Для ближайшего существа от позиции {pos} в радиусе {number} типа {:list:( title:тип; list:ANY,UNKNOWN,PLAYER,NPC,MONSTER,ANIMAL,LIVING,ITEM,PROJECTILE,PIXELMON,VILLAGER; )}",
+      preCode: "var closestEntity = ",
+      code: "getClosestEntity({},{},EntityType_{});\n if (closestEntity) {:[closest-entity:]}"
+    }
+  },
+  {
+    title: "Для ближайшых существ",
+    element: {
+      type: ElementType.UL,
+      cannot_inherit:true,
+      header: "Для ближайших существ от позиции {pos} в радиусе {number} типа {:list:( title:тип; list:ANY,UNKNOWN,PLAYER,NPC,MONSTER,ANIMAL,LIVING,ITEM,PROJECTILE,PIXELMON,VILLAGER; )}",
+      preCode: "var nearbyEntities = ",
+      code: "getNearbyEntities({},{},EntityType_{});\n for (var i=0;i<nearbyEntities.length;i++) {var closestEntity=nearbyEntities[i]; \n :[closest-entity:]}"
     }
   }
 ]

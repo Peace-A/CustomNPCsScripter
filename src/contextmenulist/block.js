@@ -136,5 +136,6 @@ let result = [
 
 assertChildrens(result[0], require("./world"), "world.")
 assertChildrens(result[1], require("./data"), "world.")
+//assertChildrens(({children:result}).children, require("./timer"), "getTimers()")
 
 module.exports = result

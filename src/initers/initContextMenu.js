@@ -6,6 +6,11 @@ const { createContextMenuByIdList } = require("../ContextMenu.js")
 module.exports = () => {
   $("#context-menu").menu()
   $(".context-menu-caller").on("contextmenu", function (event) {
+
+    console.log(event.target.getAttribute("context-menu-data"))
+
+    if (!event.target.getAttribute("context-menu-data"))
+      return 
       
     $("#context-menu").css({
         top: event.clientY,

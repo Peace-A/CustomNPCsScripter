@@ -10,7 +10,7 @@ module.exports = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "В начале",
-          code: "function init(event) {[blockscripted api]}"
+          code: "function init(event) {:[blockscripted:]}"
         }
       },
       {
@@ -19,7 +19,7 @@ module.exports = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Ежесекундно",
-          code: "function tick(event) {[blockscripted api]}"
+          code: "function tick(event) {:[blockscripted:]}"
         }
       },
       {
@@ -28,7 +28,7 @@ module.exports = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда взаимодействует игрок",
-          code: "function interact(event) {[blockscripted api player]}"
+          code: "function interact(event) {:[blockscripted player:]}"
         }
       },
       {
@@ -37,7 +37,7 @@ module.exports = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда получает редстоун сигнал",
-          code: "function redstone(event) {[redstonepower-number api blockscripted]}"
+          code: "function redstone(event) {:[redstonepower-number blockscripted:]}"
         }
       },
       {
@@ -46,7 +46,7 @@ module.exports = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда кто-то падает сверху",
-          code: "function fallenUpon(event) {[entity-entity api blockscripted]}"
+          code: "function fallenUpon(event) {:[entity-entity blockscripted:]}"
         }
       },
       {
@@ -55,7 +55,7 @@ module.exports = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда блок сломан",
-          code: "function broken(event) {[api blockscripted]}"
+          code: "function broken(event) {:[blockscripted:]}"
         }
       },
       {
@@ -64,7 +64,7 @@ module.exports = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда блок взорван",
-          code: "function exploded(event) {[api blockscripted]}"
+          code: "function exploded(event) {:[blockscripted:]}"
         }
       },
       {
@@ -73,7 +73,7 @@ module.exports = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда блок под дождём",
-          code: "function rainFilled(event) {[api blockscripted]}"
+          code: "function rainFilled(event) {:[blockscripted:]}"
         }
       },
       {
@@ -82,7 +82,7 @@ module.exports = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда соседние блоки обновлены",
-          code: "function neighborChanged(event) {[api blockscripted]}"
+          code: "function neighborChanged(event) {:[blockscripted:]}"
         }
       },
       {
@@ -91,7 +91,7 @@ module.exports = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда кто-то кликнул по блоку",
-          code: "function clicked(event) {[api blockscripted player]}"
+          code: "function clicked(event) {:[blockscripted player:]}"
         }
       },
       {
@@ -100,7 +100,7 @@ module.exports = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда игрок сломал блок",
-          code: "function harvested(event) {[api blockscripted player]}"
+          code: "function harvested(event) {:[blockscripted player:]}"
         }
       },
       {
@@ -109,7 +109,7 @@ module.exports = {
           type: ElementType.UL,
           cannot_be_inherits: true,
           header: "Когда кто-то дотрагивается к блоку",
-          code: "function collide(event) {[api blockscripted entity-entity]}"
+          code: "function collide(event) {:[blockscripted entity-entity:]}"
         }
       }
     ]
