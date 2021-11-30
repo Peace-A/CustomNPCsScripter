@@ -1,6 +1,6 @@
 {
   "name": "custom-npcs-scripter",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Custom npcs scripter",
   "main": "./electron.js",
   "scripts": {

@@ -98,6 +98,7 @@ const MFElementTemplate = {
   textInput(template) {
     let textInput$ = $(`<input class="p-3" placeholder="${template.placeholder || ""}" value="${template.value || ""}" >`)
 
+    textInput$.css("color", template.color||"white")
 
     if (template.fontSize !== undefined)
       textInput$.css("font-size", `${template.fontSize}px`)

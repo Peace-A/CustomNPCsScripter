@@ -6,7 +6,7 @@ const { addPage, HEADER_HEIGHT } = require("../doPage")
 
 const PAGE_MAX_NUMBER = 4
 
-module.exports = () => {
+module.exports = (APP_VERSION) => {
   $(() => {
 
     // load first doPage
@@ -43,36 +43,49 @@ module.exports = () => {
     new ClipboardJS('.copy-btn')
 
     // init log modal form caller
-    $("#log-caller").click(()=>{
-      console.log(ModalForm)
-      let logModalForm = ModalForm({
-        title: "Список обновлений",
-        body: [[
-          "0.6 Beta",
-          "Первый выпуск скриптера.",
-          "Благодарю @!!TorayLife за помощь в локализации."
-        ],[
-          "0.7",
-          "-Новые елементы интерфейса",
-          "-Система проверки ошибок",
-          "-Подсказки в контекстном меню",
-          "-Поддержка скриптовых дверей",
-          "-Поддержка на десктопе",
-          "-Удобная робота с частицами",
-          "-Поддержка взаемодействия с ближайшими сушествами",
-          "-Система изменения характеристик нпс",
-          "-Поддержка нескольких вкладок",
-          "-Система настроек",
-          "-Тёмная тема",
-          "-Улучшен внешний вид контекстного меню",
-          "-Поддержка таймеров",
-          "-Поддеожка создания интерфейсов",
-          "-Исправлено многочесленое количечество багов"
-        ]
-        ]
+    void async function() {
+      let updateBody = [[
+        "0.6 Beta",
+        "Первый выпуск скриптера.",
+        "Благодарю @!!TorayLife за помощь в локализации."
+      ],[
+        "0.7",
+        "-Новые елементы интерфейса",
+        "-Система проверки ошибок",
+        "-Подсказки в контекстном меню",
+        "-Поддержка скриптовых дверей",
+        "-Поддержка на десктопе",
+        "-Удобная робота с частицами",
+        "-Поддержка взаемодействия с ближайшими сушествами",
+        "-Система изменения характеристик нпс",
+        "-Поддержка нескольких вкладок",
+        "-Система настроек",
+        "-Тёмная тема",
+        "-Улучшен внешний вид контекстного меню",
+        "-Поддержка таймеров",
+        "-Поддеожка создания интерфейсов",
+        "-Исправлено многочесленое количечество багов"
+      ]
+      ]
+
+      try {
+        await (async ()=>{
+          let scripterPackage = await fetch("https://customnpcsscripter.modepaes.repl.co/package.json")
+          let json = await scripterPackage.json()
+          console.log(json, APP_VERSION)
+          if (json.version !== APP_VERSION)
+            updateBody.unshift([`<a href="https://customnpcsscripter.modepaes.repl.co/download">Вышло обновление: ${json.version}</a>`])
+        })();
+      } catch(e) {console.log(e)}
+      
+      $("#log-caller").click(()=>{
+        let logModalForm = ModalForm({
+          title: "Список обновлений",
+          body: updateBody
+        })
+        logModalForm.show()
       })
-      logModalForm.show()
-    })
+    }()
 
   })
 }

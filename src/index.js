@@ -1,5 +1,7 @@
 "use strict"
 
+const APP_VERSION = "0.7.1"
+
 require( "bootstrap/dist/css/bootstrap.min.css" )
 require( "./style.css" )
 
@@ -17,7 +19,7 @@ const initGuiMaker = require("./initers/initGuiMaker.js")
 
 JSON.copy = obj => JSON.parse(JSON.stringify(obj))
 
-initGUI()
+initGUI(APP_VERSION)
 initTrashBar()
 initContextMenu()
 initTranslationEngine()

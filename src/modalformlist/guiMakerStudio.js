@@ -174,7 +174,7 @@ module.exports = {
               "border": "3px solid black",
               "position": "absolute",
               "text-align": "center",
-              "font-size": "10px",
+              "font-size": "7px",
               "width": `${width || 30}px`,
               "height": `${height || 20}px`,
               "transform": `translate(${x}px, ${y}px)`
