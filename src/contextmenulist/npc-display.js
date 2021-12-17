@@ -60,8 +60,8 @@ module.exports = [
       code: 'event.npc.getDisplay().setVisible(:__:)',
       li_list: {
         "Да": "0",
-        "Полувидимым": "1",
-        "Нет": "2"
+        "Нет": "1",
+        "Частично": "2"
       }
     }
   },

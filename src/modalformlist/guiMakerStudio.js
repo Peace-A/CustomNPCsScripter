@@ -27,6 +27,8 @@ module.exports = {
 
     let { convertList } = guiMaker
     let guiMakerID = 0
+    let guiMakerSlotID = 0
+    let guiMakerInventoryID = 0
 
     return {
       title: "Интерфейс",
@@ -134,18 +136,23 @@ module.exports = {
           // append elements from list
           for (let elementIndex of Object.values(guiElement) ) {
             le(elementIndex).forEach(e=>{
-              addElement[Object.keys(guiElement)[elementIndex]](e.json)
+              console.log("elementIndex", elementIndex)
+              addElement[Object.keys(guiElement).find(e=>guiElement[e]===elementIndex)](e.json)
             })
           }
 
           return result$
 
-          function li$(title, id, notShowId) {
+          function li$(title, id, prps={}) {
+            var notShowId = false
             if (id === undefined) {
               var id = guiMakerID++
               var notShowId = true
             }
-            return $(`<li class="list-group-item" gui-maker-element-id="${id}">${notShowId?"":"ID: "+id} ${title}</li>`).css({
+            var showId = id
+            if (prps.isSlot === true) showId /= 100
+            if (prps.isInventory === true) showId /= 1000
+            return $(`<li class="list-group-item" gui-maker-element-id="${id}">${notShowId?"":"ID: "+showId} ${title}</li>`).css({
               "touch-action": "none",
               "user-select": "none",
               "cursor": "pointer"
@@ -161,6 +168,12 @@ module.exports = {
                     rightSidePanel$.empty()
                   $(this).parent().remove()
                   $(".gui-maker-element[gui-maker-element-id='"+id+"']").remove()
+                  if (prps.isSlot === true)
+                    guiMakerSlotID--
+                  if (prps.isInventory === true)
+                    guiMakerInventoryID--
+                  else
+                    guiMakerID--
                 })
             )
           }
@@ -189,7 +202,8 @@ module.exports = {
             let {x, y, hasItem} = args
             x = parseInt(x)
             y = parseInt(y)
-            let id = (guiMakerID++)*100
+            let id = (guiMakerSlotID)*100
+            guiMakerSlotID++
             workspace$.append( $(`<div class="gui-maker-element" gui-maker-element-type="${hasItem?"slotitem":"slot"}" gui-maker-element-id="${id}"></div>`).css({
               "background-image": `url("assets/images/Slot.png")`,
               "background-repeat": "no-repeat",
@@ -202,7 +216,7 @@ module.exports = {
               "gui-maker-element-pos-x": x,
               "gui-maker-element-pos-y": y
             }) )
-            list$.append(li$("Слот", id, true))
+            list$.append(li$("Слот", id, {isSlot:true}))
           }
 
           function addMineSlotWithItem(args={}) {
@@ -252,7 +266,8 @@ module.exports = {
             x = parseInt(x)
             y = parseInt(y)
             if (id === undefined)
-              id = guiMakerID++
+              id = guiMakerInventoryID*1000
+            guiMakerInventoryID++
             workspace$.append($(`<div class="gui-maker-element" gui-maker-element-type="inventory" gui-maker-element-id="${id}">Инвентарь игрока</div>`).css({
               "position": "absolute",
               "transform": `translate(${x}px, ${y}px)`,
@@ -264,7 +279,7 @@ module.exports = {
               "gui-maker-element-pos-x": x,
               "gui-maker-element-pos-y": y
             }) )
-            list$.append(li$("Инвентарь", id, true))
+            list$.append(li$("Инвентарь", id, {isInventory:true}))
           }
 
           function showObjectProperties(id) {

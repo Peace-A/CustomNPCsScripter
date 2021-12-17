@@ -13,9 +13,9 @@ module.exports = [
   {
     title: "Слот",
     element: {
-      type: ElementType.LI,
-      header: `Слот x::_x_: y::_y_:`,
-      code: `scriptGuiList[guiId].addItemSlot(:_x_:, :_y_:)`
+      type: ElementType.LI_UL,
+      header: `Слот x::_x_: y::_y_: при клике:`,
+      code: `scriptGuiList[guiId].addItemSlot(:_x_:, :_y_:);\n scriptGuiEvents.slot[:_id_:] = function(event) { :[api gui-api player slot-event-data:] }`
     }
   },
   {
