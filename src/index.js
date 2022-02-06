@@ -1,6 +1,6 @@
 "use strict"
 
-const APP_VERSION = "0.7.1"
+const APP_VERSION = "0.7.2"
 
 require( "bootstrap/dist/css/bootstrap.min.css" )
 require( "./style.css" )
