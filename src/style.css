@@ -1,0 +1,169 @@
+
+* {
+    list-style: none;
+}
+body {
+    overflow:hidden;
+}
+/*.main-row {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100px;
+}*/
+
+.cannot-append {
+  border: 2px solid red;
+}
+.cannot-append:after {
+  content: "Этот элемент нельзя сюда добавить";
+  background-color: red;
+}
+
+.doElement>header>input {
+  width: 100px;
+}
+
+.main-screen>.btn {
+  margin:10px;
+}
+
+#log-caller {
+  cursor: pointer;
+}
+
+#logModalForm {
+  background-color: rgba(0,0,0,0.5)
+}
+
+#context-menu {
+  font-size: 12px;
+  display: none;
+  position: absolute;
+  z-index: 100;
+}
+#context-menu ul {
+  min-width: 150px;
+}
+.doElement , .doElement-list-li , .gui-maker-element {
+  color: white;
+  touch-action: none;
+  user-select: none;
+}
+.doElement > header , .doElement-list-li > header {
+  background-color: gray;
+  color: white;
+  touch-action: none;
+  user-select: none;
+  display: flex;
+}
+.doElement > ul {
+  min-height: 24px;
+  padding: 0;
+  margin: 0;
+  margin-left: 24px;
+  border-bottom: 2px solid gray;
+  border-left: 2px solid gray;
+}
+.doElement > ul > .doElement:last-child {
+  margin-bottom:24px;
+}
+
+.doPage > header {
+  width:100%;
+}
+
+.modal-content {
+  overflow: visible !important
+}
+
+input {
+  transform: scale(0.9)
+}
+
+.modal-content input {
+  transform: scale(1)
+}
+
+.scaledown {
+  transform: scale(0.9)
+}
+
+#floatdoElement {
+  position: absolute;
+  touch-action: none;
+  user-select: none;
+}
+.doElement-waiter {
+  opacity: 0.5;
+  display: none;
+}
+.ui-menu-item>.ui-menu {
+  max-height: 500px;
+}
+
+.ui-element-list {
+  transform: scale(0.9)
+}
+.dropdown-menu {
+  cursor: pointer
+}
+
+.context-menu-caller-small {
+  min-width: 20px;
+  min-height: 10px;
+  background-color: white;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  border: 1px solid silver;
+}
+#trash {
+  position: absolute;
+  background-color: red;
+  width: 100%;
+  height: 56px;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: none;
+  text-align: center;
+}
+#trash > h1 {
+  font-size: 50px;
+  transform: translateY(-5px);
+}
+#hide-copyer {
+  display:none;
+}
+
+.modal-content > img {
+  margin: 0
+}
+
+.modal {
+  background-color: rgba(0,0,0,0.6)
+}
+
+.dropdown-menu {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.has-mistake {
+  background-color: red !important
+}
+
+.mistake-label {
+  color: red
+}
+
+#hint-dialog {
+  position: absolute;
+  width: 200px;
+  left: 90%;
+  z-index: 100;
+  background-color: white;
+  font-size: 12px;
+  border: 1px solid rgb(56, 61, 63);
+}
+
+#hint-dialog img { max-width: 100% }

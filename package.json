@@ -1,0 +1,50 @@
+{
+  "name": "custom-npcs-scripter",
+  "version": "0.7.2",
+  "description": "Custom npcs scripter",
+  "main": "./electron.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve",
+    "server": "node server",
+    "electron": "webpack && electron .",
+    "dist": "electron-builder",
+    "distlinux32": "electron-builder -l --ia32",
+    "distlinux64": "electron-builder -l --x64",
+    "distwin32": "electron-builder --win --ia32",
+    "distwin64": "electron-builder --win --x64"
+  },
+  "keywords": [
+    "customnpcs",
+    "minecraft"
+  ],
+  "author": "peace <modepaes@gmail.com>",
+  "license": "ISC",
+  "build": {
+    "appId": "peace.customnpcsscripter",
+    "icon": "iconApp.png",
+    "target": "portable"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.1.2",
+    "electron-builder": "^22.14.5",
+    "eslint": "^7.30.0",
+    "eslint-plugin-react": "^7.22.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2",
+    "bootstrap": "^4.6.0",
+    "clipboard": "^2.0.8",
+    "electron": "^13.1.2",
+    "interactjs": "^1.9.22",
+    "jquery": "^3.6.0",
+    "jquery-ui-bundle": "^1.12.1-migrate",
+    "webpack-jquery-ui": "^2.0.1",
+    "webpack-unassert-loader": "^1.2.0"
+  }
+}
