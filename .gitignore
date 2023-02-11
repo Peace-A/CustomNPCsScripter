@@ -5,6 +5,7 @@ dist/*-unpacked
 dist/*-i386
 dist/*-ico
 index.js
+index.js.LICENSE.txt
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
