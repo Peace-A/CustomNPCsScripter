@@ -7,7 +7,6 @@
     "build": "webpack",
     "start": "webpack serve",
     "server": "node server",
-    "electron": "webpack && electron .",
     "dist": "electron-builder",
     "distlinux32": "electron-builder -l --ia32",
     "distlinux64": "electron-builder -l --x64",
