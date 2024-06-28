@@ -93,7 +93,6 @@ const ModalFormList = {
   bgImage: ModalForm.createBackImgModalForm
 }
 
-const { UIElements } = require("./UIElements")
 const MFElementTemplate = {
   textInput(template) {
     let textInput$ = $(`<input class="p-3" placeholder="${template.placeholder || ""}" value="${template.value || ""}" >`)
@@ -112,6 +111,7 @@ const MFElementTemplate = {
 
   },
   choiceButton(template) {
+    const { UIElements } = require("./UIElements")
     let dropdown$ = UIElements.list.createElement({
       buttonClassCSS: "minecraft-btn",
       dropdownClassCSS: "minecraft-dropdown",
